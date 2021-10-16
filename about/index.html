@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css.css">
+    <link rel="stylesheet" href="./css/index_css.css">
     <title>你好</title>
 </head>
 
@@ -16,7 +16,7 @@
             <span>BLOG</span>
         </div>
         <ul id="header-ul">
-            <li><a href="#" class="header-item">文章</a></li>
+            <li><a href="#" class="header-item active">主页</a></li>
             <li><a href="#" class="header-item">微语</a></li>
             <li><a href="#" class="header-item">留言</a></li>
             <li><a href="#" class="header-item">相册</a></li>
@@ -47,16 +47,31 @@
     <div id="content">
         <div id="content-body">
             <span id="content-title">
-                <a href="#" class="active">设计文章</a>
+                <a id="showOne"  class="content-item active">无缝轮播图</a>
                 <span>|</span>
-                <a href="#">前端文章</a>
+                <a id="showTwo"  class="content-item ">渐变轮播图</a>
                 <span>|</span>
-                <a href="#">旅游杂记</a>
+                <a id="showThree"  class="content-item ">前端文章</a>
             </span>
-            <div id="content-list">
+
+            <div id="wrap" class="">
+                <ul id="seamlessItemlist">
+                    <li class="seamlessItem"><img src="./img/seamLess/seamless_1.png"></li>
+                    <li class="seamlessItem"><img src="./img/seamLess/seamless_2.jpg"></li>
+                    <li class="seamlessItem"><img src="./img/seamLess/seamless_3.png"></li>
+                    <li class="seamlessItem"><img src="./img/seamLess/seamless_1.png"></li>
+                </ul>
+                <ul id="pointlist">
+                </ul>
+                <button type="button" class="btn" id="btnLeft">
+                    < </button> <button type="button" class="btn" id="btnRight"> >
+                </button>
+            </div>
+
+            <div id="content-list" class="hide">
                 <div class="list-item">
                     <div class="itme-img">
-                        <img src="./sy_img1.jpg">
+                        <img src="./img/sy_img1.jpg">
                     </div>
                     <div>
                         <div class="item-words">
@@ -76,11 +91,32 @@
                     </div>
                 </div>
             </div>
-            <div id="content-demo">
 
-            </div>
+            
+
         </div>
     </div>
+    <footer>
+        <div id="footer-body">
+            <div id="footer-wx">
+                <img width="100%" src="./img/vx.png">
+            </div>
+            <div id="footer-info">
+                <div id="footer-text">
+                    <h4>我的联系方式</h4>
+                    <p>微信
+                        <span>Ld958897493</span>
+                    </p>
+                    <p>邮箱
+                        <span>958897493@qq.com</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
 </body>
+<script src="./js/index.js"></script>
 
 </html>
