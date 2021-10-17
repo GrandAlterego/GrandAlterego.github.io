@@ -2,7 +2,9 @@ let showOne = document.querySelector('#showOne');
 let showTwo = document.querySelector('#showTwo');
 let showThree = document.querySelector('#showThree');
 let wrap = document.querySelector('#wrap');
+let graduallywrap = document.querySelector('.graduallywrap');
 let contentList = document.querySelector('#content-list');
+
 
 function removeshow(){
     showOne.className = "";
@@ -10,14 +12,20 @@ function removeshow(){
     showThree.className = "";
     wrap.className = "hide";
     contentList.className = "hide";
+    graduallywrap.className = "graduallywrap hide "
 }
 
-showOne.addEventListener('click',function (params) {
+showOne.addEventListener('click',function () {
     removeshow();
     showOne.className = "active";
     wrap.className = "";
 });
-showThree.addEventListener('click',function (params) {
+showTwo.addEventListener('click',function(){
+    removeshow();
+    showTwo.className = "active";
+    graduallywrap.className = "graduallywrap"
+})
+showThree.addEventListener('click',function () {
     removeshow();
     showThree.className = "active";
     contentList.className = "";
@@ -120,3 +128,72 @@ let timeid = setInterval(() => {
 
 
 
+
+
+/* 
+渐变轮播
+*/
+let graduallyitems = document.querySelectorAll('.graduallyitem');
+let graduallyPoints = document.querySelectorAll('.graduallyPoint');
+let time = 0;
+
+let graduallyIndex = 0;
+function cleargraduallyActive(){
+    for(let key of graduallyitems){
+        key.classList.remove('graduallyActive');
+    }
+    for(let key of graduallyPoints){
+        key.classList.remove('graduallyActive');
+    }
+}
+function addgraduallyActive(){
+    graduallyitems[graduallyIndex].classList.add('graduallyActive');
+    graduallyPoints[graduallyIndex].classList.add('graduallyActive');
+}
+function goUp(){
+    time = 0;
+    graduallyIndex--;
+    if(graduallyIndex < 0){
+        graduallyIndex = 2;
+    }
+}
+function goDown(){
+    time = 0;
+    graduallyIndex++;
+    if(graduallyIndex > 2){
+        graduallyIndex = 0;
+    }
+}
+graduallyBtnLeft.addEventListener('click',function(){
+    time = 0;
+    cleargraduallyActive();
+    goUp();
+    addgraduallyActive();
+})
+graduallyBtnRight.addEventListener('click',function(){
+    time = 0;
+    cleargraduallyActive();
+    goDown();
+    addgraduallyActive();
+})
+
+for(let key of graduallyPoints){
+    key.addEventListener('click',function(){
+        time = 0;
+        cleargraduallyActive();
+        graduallyIndex = key.getAttribute('data-num');
+        addgraduallyActive();
+    })
+}
+
+
+setInterval(function(){
+    time++;
+    if(time == 20){
+        time = 0;
+        cleargraduallyActive();
+        goDown();
+        addgraduallyActive();
+    }
+}
+,100);

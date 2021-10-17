@@ -10,23 +10,27 @@
 </head>
 
 <body>
+
     <header>
         <div id="header-title">
             <span>MY</span>
             <span>BLOG</span>
         </div>
         <ul id="header-ul">
-            <li><a href="#" class="header-item active">主页</a></li>
-            <li><a href="#" class="header-item">微语</a></li>
-            <li><a href="#" class="header-item">留言</a></li>
-            <li><a href="#" class="header-item">相册</a></li>
-            <li><a href="#" class="header-item">关于</a></li>
+            <li><a href="../about/" onclick="" class="header-item active">主页</a></li>
+            <li><a href="../note/" class="header-item">笔记</a></li>
+            <!-- <li><a href="#" class="header-item">留言</a></li> -->
+            <!-- <li><a href="#" class="header-item">相册</a></li> -->
+            <!-- <li><a href="#" class="header-item">关于</a></li> -->
         </ul>
         <div id="header-welcome">
-            <span>欢迎来到我的博客~</span>
+            <span>欢迎来到小迪的博客~</span>
         </div>
     </header>
-    <div id="banner">
+
+
+
+    <div id="banner" class="hide">
         <div id="banner-content">
             <div id="banner-title">
                 <h3>
@@ -44,16 +48,20 @@
             </div>
         </div>
     </div>
+
+
+
     <div id="content">
         <div id="content-body">
             <span id="content-title">
-                <a id="showOne"  class="content-item active">无缝轮播图</a>
+                <a id="showOne" class="content-item active">无缝轮播图</a>
                 <span>|</span>
-                <a id="showTwo"  class="content-item ">渐变轮播图</a>
+                <a id="showTwo" class="content-item">渐变轮播图</a>
                 <span>|</span>
-                <a id="showThree"  class="content-item ">前端文章</a>
+                <a id="showThree" class="content-item ">前端资源</a>
             </span>
 
+            <!-- 无缝轮播图 -->
             <div id="wrap" class="">
                 <ul id="seamlessItemlist">
                     <li class="seamlessItem"><img src="./img/seamLess/seamless_1.png"></li>
@@ -68,34 +76,93 @@
                 </button>
             </div>
 
+
+
+            <!-- 渐变轮播图 -->
+            <div class="graduallywrap hide">
+                <ul class="graduallyList">
+                    <li class="graduallyitem graduallyActive"><img src="./img/gradually/grudually_1.jpg"></li>
+                    <li class="graduallyitem"><img src="./img/gradually/grudually_2.png"></li>
+                    <li class="graduallyitem"><img src="./img/gradually/grudually_3.png"></li>
+                </ul>
+                <ul class="graduallyPoints">
+                    <li class="graduallyPoint graduallyActive" data-num="0"></li>
+                    <li class="graduallyPoint" data-num="1"></li>
+                    <li class="graduallyPoint" data-num="2"></li>
+                </ul>
+                <button class="graduallyBtn" id="graduallyBtnLeft">〈</button>
+                <button class="graduallyBtn" id="graduallyBtnRight">〉</button>
+            </div>
+
+
+
+            <!-- 前端文章 -->
             <div id="content-list" class="hide">
                 <div class="list-item">
                     <div class="itme-img">
-                        <img src="./img/sy_img1.jpg">
+                        <img src="./img/resources/webpack.png">
                     </div>
                     <div>
                         <div class="item-words">
-                            <h3>空间立体效果图，完美呈现最终效果</h3>
-                            <h5>设计文章</h5>
+                            <h3>是前端资源模块化管理和打包工具</h3>
+                            <h5>Webpack</h5>
                             <p>
-                                室内设计作为一门新兴的学科，
-                                尽管还只是近数十年的事，
-                                但是人们有意识地对自己生活、
-                                生产活动的室内进行安排布置，
-                                甚至美化装饰，
-                                赋予室内环境以所祈使的气氛，
-                                却早巳从人类文明伊始的时期就已存在
+                                Webpack 是当下最热门的前端资源模块化管理和打包工具。
+                                它可以将许多松散的模块按照依赖和规则
+                                打包成符合生产环境部署的前端资源。
                             </p>
-                            <a href="">→</a>
+                            <a href="https://www.webpackjs.com/">前往→</a>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            
+                <div class="list-item">
+                    <div class="itme-img">
+                        <img src="./img/resources/npm.png">
+                    </div>
+                    <div>
+                        <div class="item-words">
+                            <h3>NPM</h3>
+                            <h5>中文文档</h5>
+                            <p>
+                                NPM（node package manager）
+                                是 Node.js 世界的包管理器。
+                                NPM 可以让 JavaScript 开发者在共享代码、
+                                复用代码以及更新共享的代码上更加方便。
+                            </p>
+                            <a href="https://www.npmjs.cn/">前往→</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="list-item">
+                    <div class="itme-img">
+                        <img src="./img/resources/vuejs.png">
+                    </div>
+                    <div>
+                        <div class="item-words">
+                            <h3>Vue.js</h3>
+                            <h5>中文文档</h5>
+                            <p>
+                                Vue.js - 是一套构建用户界面的渐进式框架。
+                            </p>
+                            <a href="https://vuejs.bootcss.com/guide/">前往→</a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
 
         </div>
     </div>
+
+
+
+
+
     <footer>
         <div id="footer-body">
             <div id="footer-wx">

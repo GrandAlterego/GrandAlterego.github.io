@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>你好</title>
+</head>
+
+<body>
+
+    <header>
+        <div id="header-title">
+            <span>MY</span>
+            <span>BLOG</span>
+        </div>
+        <ul id="header-ul">
+            <li><a href="../about/" class="header-item ">主页</a></li>
+            <li><a href="../note/" class="header-item active">笔记</a></li>
+            <!-- <li><a href="#" class="header-item">留言</a></li> -->
+            <!-- <li><a href="#" class="header-item">相册</a></li> -->
+            <!-- <li><a href="#" class="header-item">关于</a></li> -->
+        </ul>
+        <div id="header-welcome">
+            <span>欢迎来到小迪的博客~</span>
+        </div>
+    </header>
+
+
+    <div id="content">
+
+
+        <div id="content-body">
+            <span id="content-title">
+                <a id="showOne" class="content-item active">Vue生命周期图示</a>
+                <span>|</span>
+                <a id="showTwo" class="content-item">响应式原理</a>
+                <span>|</span>
+                <a id="showThree" class="content-item ">Vuex状态管理模式</a>
+            </span>
+            <div class="content-note">
+
+                <div id="imgOne" class="content-textimg">
+                    <h4>生命周期：</h4>
+                    <p>1.又名：生命周期回调函数、生命周期函数、生命周期钩子。</p>
+                    <p>2.是什么：Vue在关键时刻帮我们调用的一些特殊名称的函数。</p>
+                    <p>3.生命周期函数的名字不可更改，但函数的具体内容是程序员根据需求编写的。</p>
+                    <p>4.生命周期函数中的this指向是vm 或 组件实例对象。</p>
+
+                    <h4>常用的生命周期钩子：</h4>
+                    <p>1.mounted: 发送ajax请求、启动定时器、绑定自定义事件、订阅消息等【初始化操作】。</p>
+                    <p>2.beforeDestroy: 清除定时器、解绑自定义事件、取消订阅消息等【收尾工作】。</p>
+
+                    <img src="./img/lifecycle.png">
+                </div>
+
+                <div id="imgTwo" class="hide" class="content-textimg">
+                    <h4>Vue监视数据的原理</h4>
+                    <p>1. vue会监视data中所有层次的数据。</p>
+                    <p>2. 如何监测对象中的数据？</p>
+                        <p>通过setter实现监视，且要在new Vue时就传入要监测的数据。</p>
+                        <p>(1).对象中后追加的属性，Vue默认不做响应式处理</p>
+                        <p>(2).如需给后添加的属性做响应式，请使用如下API：</p>
+                            <p>Vue.set(target，propertyName/index，value) 或 </p>
+                            <p>vm.$set(target，propertyName/index，value)</p>
+                    <p>3. 如何监测数组中的数据？</p>
+                        <p>通过包裹数组更新元素的方法实现，本质就是做了两件事：</p>
+                            <p>(1).调用原生对应的方法对数组进行更新。</p>
+                            <p>(2).重新解析模板，进而更新页面。</p>
+
+                    <h4>4.在Vue修改数组中的某个元素一定要用如下方法：</h4>
+                    <p>1.使用这些API:push()、pop()、shift()、unshift()、splice()、sort()、reverse()</p>
+                    <p>2.Vue.set() 或 vm.$set()</p>
+                    <p>特别注意：Vue.set() 和 vm.$set() 不能给vm 或 vm的根数据对象 添加属性！！！</p>
+
+                    <img src="./img//data.png">
+
+                </div>
+
+                <div id="imgThree" class="hide" class="content-textimg">
+                    <h4>Vuex:</h4>
+                    <p>1.概念</p>
+                    <p>在Vue中实现集中式状态（数据）管理的一个Vue插件</p>
+                    <p>对vue应用中多个组件的共享状态进行集中式的管理（读/写），</p>
+                    <p>也是一种组件间通信的方式，且适用于任意组件间通信。</p>
+
+                    <h4>2.何时使用？</h4>
+                    <p>多个组件需要共享数据时</p>
+                    <img src="./img/vuex.png">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <div id="footer-body">
+            <div id="footer-wx">
+                <img width="100%" src="./img/vx.png">
+            </div>
+            <div id="footer-info">
+                <div id="footer-text">
+                    <h4>我的联系方式</h4>
+                    <p>微信
+                        <span>Ld958897493</span>
+                    </p>
+                    <p>邮箱
+                        <span>958897493@qq.com</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+<link rel="stylesheet" href="./css/note_css.css">
+<script src="./js/note.js"></script>
+
+</html>
